@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-serverless-test-dev-73754-authRole",
+            "UnauthRoleArn": "arn:aws:iam::076154580213:role/amplify-serverless-test-dev-73754-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::076154580213:role/amplify-serverless-test-dev-73754-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-serverless-test-dev-73754-deployment",
+            "UnauthRoleName": "amplify-serverless-test-dev-73754-unauthRole",
+            "StackName": "amplify-serverless-test-dev-73754",
+            "StackId": "arn:aws:cloudformation:us-east-1:076154580213:stack/amplify-serverless-test-dev-73754/066491f0-1bbb-11ea-94cc-0ef4281dfc4d"
+        },
+        "categories": {
+            "auth": {
+                "serverlesstest49152e39": {}
+            }
+        }
+    }
+}

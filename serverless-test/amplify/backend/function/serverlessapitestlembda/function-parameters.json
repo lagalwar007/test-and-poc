@@ -1,0 +1,12 @@
+{
+    "permissions": {
+        "auth": {
+            "serverlesstest49152e39": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    }
+}

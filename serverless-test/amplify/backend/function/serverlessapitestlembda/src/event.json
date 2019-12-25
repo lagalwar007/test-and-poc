@@ -1,0 +1,9 @@
+{
+    "fieldName": "createTestTodo",
+    "typeName": "Mutation",
+    "arguments": {
+        "id": "ww456",
+        "name": "test from lambda1",
+        "description": "test description"
+    }
+}

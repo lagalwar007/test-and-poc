@@ -1,0 +1,31 @@
+type Todo @model {
+  id: ID!
+  name: String!
+  description: String
+}
+type TodoList {
+  items: [Todo]
+  nextToken: String
+}
+
+input UpdateTodoInput {
+  id: ID!
+  name: String
+  description: String
+}
+input DeleteTodoInput {
+  id: ID
+}
+type Mutation {
+  createTestTodo(id: ID, name: String, description: String): String @function(name: "serverlessapitestlembda-${env}")
+  updateTestTodo(input: UpdateTodoInput): Todo @function(name: "serverlessapitestlembda-${env}")
+  deleteTestTodo(input: DeleteTodoInput): Todo @function(name: "serverlessapitestlembda-${env}")
+}
+type Query {
+  todosList(limit: Int, nextToken: String): TodoList @function(name: "serverlessapitestlembda-${env}")
+  getOneTodo(id: ID): Todo @function(name: "serverlessapitestlembda-${env}")
+  
+}
+type Subscription {
+  onUpdateTodoTest: Todo @aws_subscribe(mutations: ["updateTestTodo"])
+}
