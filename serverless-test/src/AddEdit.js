@@ -21,7 +21,7 @@ export const AddEditForm = ({handleEvent, todoData}) => {
         if(todoDetail.id) {
             entry = {input: Object.assign({}, todoDetail, data)};
         } else {
-            entry = Object.assign({}, todoDetail, {id: Math.floor(1000 + Math.random() * 9000), ...data});
+            entry = Object.assign({}, todoDetail, {id: String(Math.floor(1000 + Math.random() * 9000)), ...data});
         }
         handleEvent(entry);
     }

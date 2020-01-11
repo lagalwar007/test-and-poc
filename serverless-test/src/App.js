@@ -13,6 +13,11 @@ const App = () => {
   let [todoList, setTodoList] = useState([]);
   let [todoData, setTodoData] = useState({id: null, name: '', description: ''});
   const getListTodos = async() => {
+    // without lembda
+    // const res = await API.graphql(graphqlOperation(listTodos));
+    // setTodoList(res.data.listTodos.items);
+
+    // with lembda
     let {data} = await API.graphql(graphqlOperation(todosList, {limit: 5, nextToken: null}));
     setTodoList(data.todosList.items);
     let listTodosRes = await API.graphql(graphqlOperation(listTodos, {limit: 5, nextToken: null}));
@@ -27,8 +32,10 @@ const App = () => {
     //   }
     // })
     if(todoData.id) {
+      // res = await API.graphql(graphqlOperation(updateTodo, entry))
       const response = await API.graphql(graphqlOperation(updateTestTodo, entry))
     } else {
+      // res = await API.graphql(graphqlOperation(createTodo, {input: entry}));
       const rdata = await API.graphql(graphqlOperation(createTestTodo, entry));
     }    
     getListTodos();
@@ -40,6 +47,7 @@ const App = () => {
         id: detail
       }
     }
+    // const res = await API.graphql(graphqlOperation(deleteTodo, data));
     const response = await API.graphql(graphqlOperation(deleteTestTodo, data));
     getListTodos();
   }
